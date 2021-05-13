@@ -37,8 +37,52 @@ function expect(target) {
 //
 // ONLY ADD CODE TO THIS SECTION
 
+function Human({name, cool, pets}) {
+  this.name = name;
+  this.cool = true;
+  // this.pets = 'normal';
+}
 
 
+
+function Dog(owner, color, hungry, status) {
+  this.owner = name;
+  this.color = 'red';
+  this.hungry = false;
+  this.status = 'notmal'
+
+}
+
+// mady.pet(oz);
+Human.prototype.pet = function(dog) { /// This to solve the error of mady.pet
+   this.status= dog;
+}
+
+
+// Dog.prototype.changeStatus= function(changeStatus) {
+//   this.status = newStatus;
+// }
+//
+// ha.changeName('Harp');
+// Do('Happy');
+
+// Dog.prototype.changeName = function(newName) {
+//   this.name = newName;
+// }
+
+// Human.prototype.feed = function() { /// To solve the error of faith.feed
+//   console.log(`${this.hungry}`);
+// }
+
+Human.prototype.feed = function() {
+  this.hungry = true;
+}
+
+
+// function Dog(color) {
+//   this.color = color;
+//   this.pet = 'oz';
+// }
 //     __
 //    / /_  __  ______ ___  ____ _____  _____
 //   / __ \/ / / / __ `__ \/ __ `/ __ \/ ___/
