@@ -36,47 +36,76 @@ function expect(target) {
 // \___/\____/_/ /_/____/\__/_/   \__,_/\___/\__/\____/_/  /____/
 //
 // ONLY ADD CODE TO THIS SECTION
+///Solution:
 
-function Human({name, cool, pets}) {
+function Human({cool = false, name} = {}) { //serring a default of an empty default object, incase nothing is being passed
+  this.cool = cool;
   this.name = name;
-  this.cool = true;
-  // this.pets = 'normal';
-}
-
-
-
-function Dog(owner, color, hungry, status) {
-  this.owner = name;
-  this.color = 'red';
-  this.hungry = false;
-  this.status = 'notmal'
 
 }
 
-// mady.pet(oz);
-Human.prototype.pet = function(dog) { /// This to solve the error of mady.pet
-   this.status= dog;
+
+function Dog({color, hungry = true, status = 'normal', owner} = {}) { //setting a default value here allows to override it.. you can destructure an empty object, but not an undefined one
+  this.color = color;
+  this.hungry = hungry;
+  this.status = status;
+  this.owner = owner;
+
 }
 
 
-// Dog.prototype.changeStatus= function(changeStatus) {
-//   this.status = newStatus;
+Human.prototype.pet = function(dog) { //an instance of dog... the dog gets passed on and then we are targetting its, status, then change the value for it
+  dog.status = 'happy';
+}
+
+Human.prototype.feed = function(dog) { //changing for moonshine, while not changing the value for the rest... that's why target the 'prototype'
+  dog.hungry = false;
+  }
+
+
+
+
+//
+// function Human({name, cool, pets}) {
+//   this.name = name;
+//   this.cool = true;
+//   // this.pets = 'normal';
 // }
 //
-// ha.changeName('Harp');
-// Do('Happy');
-
-// Dog.prototype.changeName = function(newName) {
-//   this.name = newName;
+//
+//
+// function Dog(owner, color, hungry, status) {
+//   this.owner = name;
+//   this.color = 'red';
+//   this.hungry = false;
+//   this.status = 'notmal'
+//
 // }
-
-// Human.prototype.feed = function() { /// To solve the error of faith.feed
-//   console.log(`${this.hungry}`);
+//
+// // mady.pet(oz);
+// Human.prototype.pet = function(dog) { /// This to solve the error of mady.pet
+//    this.status= dog;
 // }
-
-Human.prototype.feed = function() {
-  this.hungry = true;
-}
+//
+//
+// // Dog.prototype.changeStatus= function(changeStatus) {
+// //   this.status = newStatus;
+// // }
+// //
+// // ha.changeName('Harp');
+// // Do('Happy');
+//
+// // Dog.prototype.changeName = function(newName) {
+// //   this.name = newName;
+// // }
+//
+// // Human.prototype.feed = function() { /// To solve the error of faith.feed
+// //   console.log(`${this.hungry}`);
+// // }
+//
+// Human.prototype.feed = function() {
+//   this.hungry = true;
+// }
 
 
 // function Dog(color) {
